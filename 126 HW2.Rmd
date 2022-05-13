@@ -23,12 +23,16 @@ cor(data1)
 #3.3.2
 fit1<-lm(BMI18~WT9,data=BGSgirls)
 summary(fit1)
+plot(BGS$WT9,BGS$BMI18,main="Marginal Plot of WT9 vs BMI18")
+
 
 fit2<-lm(BMI18~ST9,data=BGSgirls)
 summary(fit2)
+plot(BGS$ST9,BGS$BMI18,main="Marginal Plot of ST9 vs BMI18")
 
 fit3<-lm(ST9~WT9, data=BGSgirls)
 summary(fit2)
+plot(BGS$WT9,BGS$ST9,main="Marginal Plot of WT9 vs ST9") 
 
 fit4<-lm(fit1$residuals~fit3$residuals)
 summary(fit4)
@@ -52,10 +56,12 @@ summary(model)
 
 #3.6.1
 
-attach(water)
+library(alr4)
+data(water)
+fit5 <- lm(BSAAM~OPBPC+OPRC+OPSLAKE,data=water)
 pairs(BSAAM~OPBPC+OPRC+OPSLAKE,data=water)
-data=cbind(BSAAM,OPBPC,OPRC,OPSLAKE)
 cor(data)
+
 #The correlation values will be large and positive for all the variables
 #for each variable, correlation value is approximately equal to one
 #OPSLAkE and OPBPC have the highewt correlation
