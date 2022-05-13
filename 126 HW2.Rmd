@@ -38,7 +38,9 @@ plot(fit3$residuals,fit1$residuals,
      main="Add-variable plot")
 abline(fit4,col="red")
 
-#The added variable plot is of the unexplained part of the response BMI18 from fit1 residuals on the unexplained part of the added regressor from fit3 residuals.  It summarizes the relationship between BMI18 and ST9 adjusting for WT9.
+#The added variable plot is of the unexplained part of the response BMI18 from fit1 
+#residuals on the unexplained part of the added regressor from fit3 residuals. 
+#It summarizes the relationship between BMI18 and ST9 adjusting for WT9.
 
 #3.3.3
 model=lm(BMI18~HT2+HT9+WT9+ST9,data=water)
